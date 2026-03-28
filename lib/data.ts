@@ -118,7 +118,7 @@ export const hotels: Hotel[] = [
     category: 'US',
     stars: 5,
     image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80',
-    tagline: 'Art Deco masterpiece on Madison Avenue's museum mile',
+    tagline: "Art Deco masterpiece on Madison Avenue's museum mile",
     pricePerNight: '$1,600+',
     highlights: ['Jacques Garcia interiors', 'Jean-Georges Restaurant', 'Custom Rolls-Royce fleet', 'In-room DJ services'],
     suites: 150,
