@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #f5d78e;
+  --gold-dark: #9a7a2e;
+  --obsidian: #080808;
+  --charcoal: #111111;
+  --onyx: #1a1a1a;
+  --ivory: #f5f0e8;
+  --champagne: #e8d5b0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--obsidian);
+  color: var(--ivory);
+  scroll-behavior: smooth;
+}
+
+/* Luxury scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Gold text gradient */
+.gold-text {
+  background: linear-gradient(135deg, #c9a84c 0%, #f5d78e 45%, #c9a84c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold shimmer text */
+.gold-shimmer {
+  background: linear-gradient(90deg, #c9a84c 0%, #f5d78e 25%, #c9a84c 50%, #f5d78e 75%, #c9a84c 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Luxury card hover */
+.luxury-card {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s ease;
+}
+.luxury-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(201, 168, 76, 0.15);
+}
+
+/* Gold border gradient */
+.gold-border {
+  position: relative;
+}
+.gold-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #c9a84c, #f5d78e, #c9a84c);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Section divider */
+.divider-gold {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+  margin: 0 auto;
+}
+
+/* Overlay gradient on images */
+.img-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8,8,8,0.9) 0%, rgba(8,8,8,0.4) 50%, rgba(8,8,8,0.1) 100%);
+}
+
+/* Font assignments */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+.font-cormorant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+.font-inter {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Button styles */
+.btn-gold {
+  background: linear-gradient(135deg, #c9a84c 0%, #f5d78e 50%, #c9a84c 100%);
+  background-size: 200% auto;
+  color: #080808;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-gold:hover {
+  background-position: right center;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(201, 168, 76, 0.35);
+}
+
+.btn-outline-gold {
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.btn-outline-gold:hover {
+  background: rgba(201, 168, 76, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Tag badge */
+.badge-gold {
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  color: #c9a84c;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+/* Nav blur */
+.nav-blur {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Star rating */
+.star-gold {
+  color: #c9a84c;
+}
+
+/* Animate on scroll helper classes */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
